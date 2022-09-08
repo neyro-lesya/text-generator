@@ -69,13 +69,6 @@ class n_model:
         return prefix, word, number_first_tab, i
 
     @staticmethod
-    def make_first_in_sentence_high(text):
-        new_text = text[0].upper()
-        for i in range(1, len(text)):
-            new_text += text[i]
-        return new_text
-
-    @staticmethod
     def text_preparation(text):
         new_text = ''
         for i in text:
@@ -112,7 +105,7 @@ class n_model:
         for i in range(size):
             word_in_sentence = array_random_keys[i]
             if number_construction == 0:
-                word_in_sentence = n_model.make_first_in_sentence_high(word_in_sentence)
+                word_in_sentence = word_in_sentence.capitalize()
             word = list(self.__dictionaries_prefixes.get(array_random_keys[i]))
             number_construction += 1
             text += ' ' + word_in_sentence + ' ' + word[random.randint(0, len(word)) - 1]
