@@ -80,6 +80,8 @@ class n_model:
                 new_text += i
                 continue
             else:
+                if i == '\n':
+                    new_text += ' '
                 if i.isspace():
                     if new_text[len(new_text) - 1] != ' ':
                         new_text += i
